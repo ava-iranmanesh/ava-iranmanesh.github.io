@@ -61,8 +61,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 /* masthead */
 .masthead{display:grid;grid-template-columns:var(--rail) 1fr;gap:var(--gutter);align-items:start;padding-bottom:2.25rem;border-bottom:1px solid var(--rule)}
 .portrait{
-  width:var(--rail);height:calc(var(--rail) * 1.18);overflow:hidden;
-  border-radius:50% 50% 3px 3px / 36% 36% 3px 3px;
+  width:var(--rail);height:var(--rail);overflow:hidden;
+  border-radius:2px;
   background:var(--frame);border:1px solid var(--accent);
   display:flex;align-items:center;justify-content:center;
   box-shadow:10px 10px 0 rgba(var(--tint),.45);
@@ -177,13 +177,17 @@ footer{
   margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--ink);
   font-size:1rem;color:var(--muted);
 }
+.eq{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin:.4rem 0 0 var(--indent)}
+@media (max-width:820px){.eq{margin-left:0}}
 footer p{margin:0;max-width:40rem}
+footer .verse{margin:0 auto}
 .couplet{
   margin:0 0 2.5rem;padding:1.5rem 0 0;color:var(--accent);
 }
 .verse{
   font-family:var(--persian);font-size:1.75rem;line-height:2.1;margin:0;
-  display:grid;grid-template-columns:auto auto;justify-content:center;column-gap:4rem;row-gap:.1rem;
+  display:grid;grid-template-columns:repeat(2,minmax(0,17rem));justify-content:center;column-gap:3rem;row-gap:.1rem;
+  width:100%;max-width:none;
   direction:rtl;unicode-bidi:isolate;
 }
 .verse span{text-align:center}
@@ -204,7 +208,7 @@ footer .stamp{font-family:var(--mono);font-size:.78rem;margin-top:1rem}
   body{font-size:16.5px}
   .wrap{padding:2.25rem 1.25rem 3rem}
   .masthead{grid-template-columns:1fr;gap:1.4rem;padding-bottom:1.6rem}
-  .portrait{width:152px;height:180px;box-shadow:7px 7px 0 rgba(var(--tint),.45)}
+  .portrait{width:152px;height:152px;box-shadow:7px 7px 0 rgba(var(--tint),.45)}
   h1{margin-top:0}
   .bio,.seeking{margin-left:0;max-width:none}
   .bio{font-size:1.35rem;margin-top:1.9rem}
@@ -245,7 +249,7 @@ footer .stamp{font-family:var(--mono);font-size:.78rem;margin-top:1rem}
       <h1>Ava Iranmanesh <span class="native" lang="fa" dir="rtl">آوا ایرانمنش</span></h1>
       <p class="gloss"><i>āvā</i> &nbsp;Persian for voice, song</p>
       <p class="fields">AI Safety &middot; Alignment &middot; Evaluation &middot; Human Centered AI</p>
-      <p class="affil">Fourth year B.S. in Computer Science, Schreyer Honors College, Penn State.</p>
+      <p class="affil">4th year B.S. in Computer Science, Schreyer Honors College, Penn State.</p>
       <ul class="contact">
         <li><a href="mailto:ami5520@psu.edu">Email</a></li>
         <li><a href="https://scholar.google.com/citations?user=domlUz0AAAAJ&amp;hl=en">Scholar</a></li>
@@ -261,7 +265,7 @@ footer .stamp{font-family:var(--mono);font-size:.78rem;margin-top:1rem}
   </div>
 
   <p class="seeking">
-    I am a fourth year Computer Science student in the Schreyer Honors College at Penn State, graduating in May 2027, and I am applying to PhD programs for Fall 2027. If you work on evaluation, pluralistic alignment, or how people and models actually meet, I would love to hear from you.
+    I am a fourth year Computer Science student in the Schreyer Honors College at Penn State, graduating in May 2027, and I am applying to PhD programs for Fall 2027.
   </p>
 
   <section>
@@ -287,7 +291,7 @@ footer .stamp{font-family:var(--mono);font-size:.78rem;margin-top:1rem}
       </div>
       <div>
         <p class="title"><a href="https://icml.cc/virtual/2026/poster/67149">Position: There are futures that benchmark driven AI cannot see</a></p>
-        <p class="authors"><span class="me">Ava Iranmanesh</span>, Sobhan Lotfi, Lachin Naghashyar, Ali Shirali, Fateme Nateghi Haredasht, Sanmi Koyejo, Philip Torr, Yong Suk Lee, Fazl Barez, Joel Lehman, Peter Norvig, Arvind Narayanan</p>
+        <p class="authors"><span class="me">Ava Iranmanesh</span>*, Sobhan Lotfi*, Lachin Naghashyar, Ali Shirali, Fateme Nateghi Haredasht, Sanmi Koyejo, Philip Torr, Yong Suk Lee, Fazl Barez, Joel Lehman, Peter Norvig, Arvind Narayanan</p>
         <p class="blurb">Benchmarks decide what counts as progress. We argue that a single dominant evaluation culture quietly taxes the ideas that do not fit today's metrics, and that the blind spots this creates are structural. More benchmarks will not fix it; plural evaluation regimes, protected venues for work that cannot be ranked on a leaderboard, and funding on longer horizons might.</p>
         <p class="links"><a href="https://icml.cc/virtual/2026/poster/67149">ICML</a> <a href="https://openreview.net/pdf/c0833e1fef52e998ef8d65944caaa3aae0eaa35c.pdf">PDF</a></p>
       </div>
@@ -304,6 +308,7 @@ footer .stamp{font-family:var(--mono);font-size:.78rem;margin-top:1rem}
         <p class="blurb">Empathy is tuned for threats that are near, specific, and familiar, which leaves the abstract and large scale risks of advanced AI almost invisible to it. I argue that this failure is where the alignment problem begins on the human side, and that compassion, rather than empathy, is the more realistic route to public engagement with AI risk.</p>
       </div>
     </article>
+    <p class="eq">* equal contribution</p>
   </section>
 
   <section>
